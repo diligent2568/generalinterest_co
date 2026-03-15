@@ -4,7 +4,7 @@ export const siteData = {
   logoWhite: "/images/GENERAL_INTEREST_LOGO_HORIZ_WHITE.png",
   author: "General Interest LLC",
   description: "Home of General Interest LLC.",
-  footerTagline: "Builders and doers. Proudly based in the USA.",
+  footerTagline: "Builders and doers. Proudly based in the USA. 🇺🇸",
 
   menu: [
     { title: "Home", url: "/" },
