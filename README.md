@@ -3,7 +3,7 @@
 Website for General Interest LLC — [www.generalinterest.co](https://www.generalinterest.co)
 
 Built with [Astro](https://astro.build) + [React](https://react.dev).
-<!-- rebuild -->
+<!-- rebuild 2 -->
 
 ## Development
 
