@@ -6,7 +6,7 @@ import DarkVeil from "../components/DarkVeil";
 const team = siteData.teamShowcase;
 ---
 
-<BaseLayout title="Page 1 — Business Acquisition Consulting" logoOverride="/images/GENERAL_INTEREST_TEST_01.svg" logoOverrideWhite="/images/GENERAL_INTEREST_TEST_01_white.svg" footerLogoOverride="/images/GENERAL_INTEREST_TEST_01_white.svg">
+<BaseLayout title="Page 1 — Business Acquisition Consulting" logoOverride="/images/GENERAL_INTEREST_TEST_02.svg" logoOverrideWhite="/images/GENERAL_INTEREST_TEST_02.svg" footerLogoOverride="/images/GENERAL_INTEREST_TEST_02.svg">
   <!-- Hero -->
   <!-- Gradual blur overlay (bottom of viewport) -->
   <div class="gradual-blur gradual-blur-fixed">
@@ -247,7 +247,7 @@ const team = siteData.teamShowcase;
     display: block;
     width: 160px;
     height: 40px;
-    background: url("/images/GENERAL_INTEREST_TEST_01.svg") no-repeat center / contain;
+    background: url("/images/GENERAL_INTEREST_TEST_02.svg") no-repeat center / contain;
     filter: brightness(0) invert(1);
   }
   .header .header__nav a {
@@ -270,7 +270,7 @@ const team = siteData.teamShowcase;
     display: block;
     width: 160px;
     height: 40px;
-    background: url("/images/GENERAL_INTEREST_TEST_01.svg") no-repeat center / contain;
+    background: url("/images/GENERAL_INTEREST_TEST_02.svg") no-repeat center / contain;
     filter: brightness(0) invert(1);
   }
 </style>
@@ -398,11 +398,19 @@ const team = siteData.teamShowcase;
   .p1-hero__bg {
     position: absolute;
     inset: 0;
+    z-index: 0;
     pointer-events: none;
+  }
+
+  .p1-hero__bg > :global(astro-island) {
+    display: block;
+    width: 100%;
+    height: 100%;
   }
 
   .p1-hero__inner {
     position: relative;
+    z-index: 1;
     text-align: center;
     padding-bottom: 80px;
   }
@@ -425,6 +433,8 @@ const team = siteData.teamShowcase;
   }
 
   .p1-hero__stats {
+    position: relative;
+    z-index: 1;
     background-color: var(--p1-brand);
   }
 
