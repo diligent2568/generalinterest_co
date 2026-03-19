@@ -5,7 +5,7 @@ const pages = [
   {
     title: "Page 1",
     url: "/page-1/",
-    thumb: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=160&h=160&fit=crop&q=80",
+    thumb: "/images/GENERAL_INTEREST_ICON.svg",
   },
   { title: "Page 2", url: "#", thumb: "" },
   { title: "Page 3", url: "#", thumb: "" },
@@ -69,6 +69,12 @@ const pages = [
     border-radius: 6px;
     flex-shrink: 0;
     object-fit: cover;
+  }
+
+  .pages-list__thumb[src$=".svg"] {
+    object-fit: contain;
+    padding: 8px;
+    background: var(--color-page-alt-bg);
   }
 
   .pages-list__thumb--empty {

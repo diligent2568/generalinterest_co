@@ -7,9 +7,12 @@ import "../styles/global.css";
 interface Props {
   title?: string;
   description?: string;
+  logoOverride?: string;
+  logoOverrideWhite?: string;
+  footerLogoOverride?: string;
 }
 
-const { title = siteData.title, description = siteData.description } =
+const { title = siteData.title, description = siteData.description, logoOverride, logoOverrideWhite, footerLogoOverride } =
   Astro.props;
 const currentPath = Astro.url.pathname;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -40,10 +43,10 @@ const ogImage = new URL("/images/og-image.png", Astro.site);
     <title>{title}</title>
   </head>
   <body>
-    <Header client:idle currentPath={currentPath} />
+    <Header client:idle currentPath={currentPath} logoOverride={logoOverride} logoOverrideWhite={logoOverrideWhite} />
     <main id="main">
       <slot />
     </main>
-    <Footer />
+    <Footer logoOverride={footerLogoOverride} />
   </body>
 </html>

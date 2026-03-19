@@ -3,9 +3,11 @@ import { siteData } from "../data/siteData";
 
 interface HeaderProps {
   currentPath: string;
+  logoOverride?: string;
+  logoOverrideWhite?: string;
 }
 
-export default function Header({ currentPath }: HeaderProps) {
+export default function Header({ currentPath, logoOverride, logoOverrideWhite }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -18,8 +20,8 @@ export default function Header({ currentPath }: HeaderProps) {
       <header className="header">
         <div className="container">
           <a className="header__logo" href="/" aria-label={siteData.title}>
-            <img className="logo--dark" src={siteData.logoWhite} alt={siteData.title} />
-            <img className="logo--light" src={siteData.logo} alt={siteData.title} />
+            <img className="logo--dark" src={logoOverrideWhite || siteData.logoWhite} alt={siteData.title} />
+            <img className="logo--light" src={logoOverride || siteData.logo} alt={siteData.title} />
           </a>
           <nav className="header__nav" aria-label="Main navigation">
             {siteData.menu.map((item) => (

@@ -1,6 +1,11 @@
 ---
 import { siteData } from "../data/siteData";
 
+interface Props {
+  logoOverride?: string;
+}
+
+const { logoOverride } = Astro.props;
 const currentYear = new Date().getFullYear();
 ---
 
@@ -8,8 +13,8 @@ const currentYear = new Date().getFullYear();
   <div class="container">
     <div class="footer__top">
       <a class="footer__logo" href="/" aria-label={siteData.title}>
-        <img class="logo--dark" src={siteData.logoWhite} alt={siteData.title} />
-        <img class="logo--light" src={siteData.logo} alt={siteData.title} />
+        <img class="logo--dark" src={logoOverride || siteData.logoWhite} alt={siteData.title} />
+        <img class="logo--light" src={logoOverride || siteData.logo} alt={siteData.title} />
       </a>
       <p class="footer__tagline">{siteData.footerTagline}</p>
     </div>

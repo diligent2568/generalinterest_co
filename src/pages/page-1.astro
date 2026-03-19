@@ -1,22 +1,35 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { siteData } from "../data/siteData";
+import DarkVeil from "../components/DarkVeil";
+
+const team = siteData.teamShowcase;
 ---
 
-<BaseLayout title="Page 1 — Business Acquisition Consulting">
+<BaseLayout title="Page 1 — Business Acquisition Consulting" logoOverride="/images/GENERAL_INTEREST_TEST_01.svg" logoOverrideWhite="/images/GENERAL_INTEREST_TEST_01_white.svg" footerLogoOverride="/images/GENERAL_INTEREST_TEST_01_white.svg">
   <!-- Hero -->
+  <!-- Gradual blur overlay (bottom of viewport) -->
+  <div class="gradual-blur gradual-blur-fixed">
+    <div class="gradual-blur-inner">
+      <div style="position:absolute;inset:0;top:auto;height:60%;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);mask-image:linear-gradient(to top,rgba(0,0,0,1),rgba(0,0,0,0));-webkit-mask-image:linear-gradient(to top,rgba(0,0,0,1),rgba(0,0,0,0));"></div>
+      <div style="position:absolute;inset:0;top:auto;height:40%;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);mask-image:linear-gradient(to top,rgba(0,0,0,1),rgba(0,0,0,0));-webkit-mask-image:linear-gradient(to top,rgba(0,0,0,1),rgba(0,0,0,0));"></div>
+    </div>
+  </div>
   <section class="p1-hero">
-    <div class="p1-hero__bg"></div>
+    <div class="p1-hero__bg">
+      <DarkVeil client:only="react" hueShift={205} noiseIntensity={0.01} scanlineIntensity={0.27} speed={1} scanlineFrequency={1.5} warpAmount={0.9} />
+    </div>
     <div class="container p1-hero__inner">
-      <span class="p1-tag">Business Acquisition &amp; Advisory</span>
-      <h1 class="p1-hero__title">Navigating Business<br />Transitions With Confidence</h1>
-      <p class="p1-hero__desc">Expert guidance through acquisitions, due-diligence evaluations, and ownership transfers — so you can move forward with clarity.</p>
-      <a href="/contact/" class="p1-btn p1-btn--primary">Free Consultation</a>
+      <span class="p1-tag" data-anim>Business Acquisition &amp; Advisory</span>
+      <h1 class="p1-hero__title" data-anim>Navigating Business<br />Transitions With Confidence</h1>
+      <p class="p1-hero__desc" data-anim>Expert guidance through acquisitions, due-diligence evaluations, and ownership transfers — so you can move forward with clarity.</p>
+      <a href="/contact/" class="p1-btn p1-btn--primary" data-anim>Free Consultation</a>
     </div>
     <div class="p1-hero__stats">
       <div class="container p1-hero__stats-row">
-        <div class="p1-stat"><span class="p1-stat__num">120+</span><span class="p1-stat__label">Deals Closed</span></div>
-        <div class="p1-stat"><span class="p1-stat__num">$2.4B</span><span class="p1-stat__label">Transaction Value</span></div>
-        <div class="p1-stat"><span class="p1-stat__num">98%</span><span class="p1-stat__label">Client Retention</span></div>
+        <div class="p1-stat" data-anim><span class="p1-stat__num">120+</span><span class="p1-stat__label">Deals Closed</span></div>
+        <div class="p1-stat" data-anim><span class="p1-stat__num">$2.4B</span><span class="p1-stat__label">Transaction Value</span></div>
+        <div class="p1-stat" data-anim><span class="p1-stat__num">98%</span><span class="p1-stat__label">Client Retention</span></div>
       </div>
     </div>
   </section>
@@ -24,14 +37,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <!-- Intro / Brand -->
   <section class="p1-section p1-intro">
     <div class="container p1-intro__grid">
-      <div class="p1-intro__image">
+      <div class="p1-intro__image" data-anim>
         <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="Infrastructure construction site" loading="lazy" />
       </div>
       <div class="p1-intro__content">
-        <span class="p1-tag">Who We Are</span>
-        <h2 class="p1-section__title">Build Value.<br />Unlock Potential.</h2>
-        <p>At General Interest, we guide business owners through the most critical transitions — from acquisition and due-diligence to full ownership transfer. Our team brings decades of combined expertise in infrastructure, construction, and technology consulting.</p>
-        <blockquote class="p1-quote">
+        <span class="p1-tag" data-anim>Who We Are</span>
+        <h2 class="p1-section__title" data-anim>Build Value.<br />Unlock Potential.</h2>
+        <p data-anim>At General Interest, we guide business owners through the most critical transitions — from acquisition and due-diligence to full ownership transfer. Our team brings decades of combined expertise in infrastructure, construction, and technology consulting.</p>
+        <blockquote class="p1-quote" data-anim>
           <p>"Our goal is to equip you with the essential resources and guidance to transform your business vision into reality."</p>
           <cite>— General Interest Advisory Team</cite>
         </blockquote>
@@ -43,19 +56,19 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <section class="p1-section p1-section--alt p1-ops">
     <div class="container">
       <div class="p1-ops__header">
-        <span class="p1-tag">Our Expertise</span>
-        <h2 class="p1-section__title">Comprehensive Support For Every Phase Of Business Transition</h2>
+        <span class="p1-tag" data-anim>Our Expertise</span>
+        <h2 class="p1-section__title" data-anim>Comprehensive Support For Every Phase Of Business Transition</h2>
       </div>
       <div class="p1-ops__grid">
         <div class="p1-ops__text">
-          <div class="p1-check-item">
+          <div class="p1-check-item" data-anim>
             <span class="p1-check">✓</span>
             <div>
               <h4>End-To-End Due Diligence</h4>
               <p>Thorough financial, operational, and legal evaluation of target businesses to mitigate risk and reveal true value.</p>
             </div>
           </div>
-          <div class="p1-check-item">
+          <div class="p1-check-item" data-anim>
             <span class="p1-check">✓</span>
             <div>
               <h4>Seamless Ownership Transfers</h4>
@@ -63,7 +76,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             </div>
           </div>
         </div>
-        <div class="p1-ops__image">
+        <div class="p1-ops__image" data-anim>
           <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80" alt="Engineering and construction project" loading="lazy" />
         </div>
       </div>
@@ -91,31 +104,31 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <!-- Services -->
   <section class="p1-section p1-services">
     <div class="container">
-      <span class="p1-tag">Services</span>
-      <h2 class="p1-section__title">Empowering Businesses Through Critical Transitions</h2>
+      <span class="p1-tag" data-anim>Services</span>
+      <h2 class="p1-section__title" data-anim>Empowering Businesses Through Critical Transitions</h2>
       <div class="p1-services__grid">
-        <div class="p1-service-card">
+        <div class="p1-service-card" data-anim>
           <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=80" alt="Commercial building development" loading="lazy" />
           <div class="p1-service-card__body">
             <h3>Business Acquisition Consulting</h3>
             <p>Strategic advisory for identifying, evaluating, and acquiring mid-size businesses in infrastructure and construction.</p>
           </div>
         </div>
-        <div class="p1-service-card">
+        <div class="p1-service-card" data-anim>
           <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80" alt="Due diligence financial review" loading="lazy" />
           <div class="p1-service-card__body">
             <h3>Due-Diligence Evaluations</h3>
             <p>Comprehensive assessments covering financials, operations, compliance, and market position — leave nothing to chance.</p>
           </div>
         </div>
-        <div class="p1-service-card">
+        <div class="p1-service-card" data-anim>
           <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&q=80" alt="Construction engineering technology" loading="lazy" />
           <div class="p1-service-card__body">
             <h3>Ownership Transfer Planning</h3>
             <p>End-to-end support for business sales and transfers, including valuation, negotiation, and post-close integration.</p>
           </div>
         </div>
-        <div class="p1-service-card">
+        <div class="p1-service-card" data-anim>
           <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&q=80" alt="Design and engineering technology" loading="lazy" />
           <div class="p1-service-card__body">
             <h3>Market Research &amp; Analysis</h3>
@@ -129,10 +142,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <!-- Process -->
   <section class="p1-section p1-section--alt p1-process">
     <div class="container">
-      <span class="p1-tag">How We Work</span>
-      <h2 class="p1-section__title">Consulting For Enhanced Clarity And Confidence</h2>
+      <span class="p1-tag" data-anim>How We Work</span>
+      <h2 class="p1-section__title" data-anim>Consulting For Enhanced Clarity And Confidence</h2>
       <div class="p1-process__grid">
-        <a class="p1-process__card" href="/contact/">
+        <a class="p1-process__card" href="/contact/" data-anim>
           <img src="https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?w=600&q=80" alt="Strategic planning meeting" loading="lazy" />
           <div class="p1-process__info">
             <span class="p1-process__num">01</span>
@@ -140,7 +153,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             <p>We start by understanding your goals, market position, and ideal acquisition or exit profile.</p>
           </div>
         </a>
-        <a class="p1-process__card" href="/contact/">
+        <a class="p1-process__card" href="/contact/" data-anim>
           <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&q=80" alt="Business evaluation" loading="lazy" />
           <div class="p1-process__info">
             <span class="p1-process__num">02</span>
@@ -148,7 +161,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             <p>Our team conducts rigorous financial and operational analysis to validate value and identify risks.</p>
           </div>
         </a>
-        <a class="p1-process__card" href="/contact/">
+        <a class="p1-process__card" href="/contact/" data-anim>
           <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80" alt="Deal negotiation" loading="lazy" />
           <div class="p1-process__info">
             <span class="p1-process__num">03</span>
@@ -164,23 +177,43 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <section class="p1-section p1-about">
     <div class="container p1-about__grid">
       <div class="p1-about__content">
-        <span class="p1-tag">Why General Interest</span>
-        <h2 class="p1-section__title">For Others, It's Just Business.<br />For Us, It's Personal.</h2>
-        <p>We specialize in mid-size development companies across infrastructure, construction, design, and engineering technology. Our approach is hands-on, our relationships are long-term, and our commitment is to your success — not just the transaction.</p>
+        <span class="p1-tag" data-anim>Why General Interest</span>
+        <h2 class="p1-section__title" data-anim>For Others, It's Just Business.<br />For Us, It's Personal.</h2>
+        <p data-anim>We specialize in mid-size development companies across infrastructure, construction, design, and engineering technology. Our approach is hands-on, our relationships are long-term, and our commitment is to your success — not just the transaction.</p>
         <div class="p1-about__cols">
-          <div>
+          <div data-anim>
             <h4>Infrastructure &amp; Construction</h4>
             <p>Deep operational knowledge of the firms that build and maintain critical infrastructure across the country.</p>
           </div>
-          <div>
+          <div data-anim>
             <h4>Design &amp; Engineering Tech</h4>
             <p>Understanding of the technology landscape that powers modern design, engineering, and project delivery.</p>
           </div>
         </div>
       </div>
       <div class="p1-about__images">
-        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=80" alt="Infrastructure bridge" loading="lazy" class="p1-about__img p1-about__img--top" />
-        <img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?w=600&q=80" alt="Construction workers on site" loading="lazy" class="p1-about__img p1-about__img--bottom" />
+        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=80" alt="Infrastructure bridge" loading="lazy" class="p1-about__img p1-about__img--top" data-anim />
+        <img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?w=600&q=80" alt="Construction workers on site" loading="lazy" class="p1-about__img p1-about__img--bottom" data-anim />
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Team -->
+  <section class="p1-section p1-section--dark p1-team">
+    <div class="container">
+      <div class="p1-team__header">
+        <span class="p1-tag" data-anim>{team.title}</span>
+        <h2 class="p1-section__title" data-anim>{team.subtitle}</h2>
+      </div>
+      <div class="p1-team__grid">
+        {team.members.map((member) => (
+          <div class="p1-team-card" data-anim>
+            <img src={member.image} alt={member.name} loading="lazy" class="p1-team-card__image" />
+            <h3 class="p1-team-card__name">{member.name}</h3>
+            <span class="p1-team-card__role">{member.role}</span>
+            <p class="p1-team-card__bio">{member.bio}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
@@ -188,9 +221,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <!-- CTA -->
   <section class="p1-section p1-cta">
     <div class="container p1-cta__inner">
-      <h2 class="p1-section__title">Discover How Our Advisory Can Transform Your Next Deal</h2>
-      <p>Whether you're acquiring, selling, or transitioning a business, our team is here to ensure you move forward with confidence and clarity.</p>
-      <div class="p1-cta__btns">
+      <h2 class="p1-section__title" data-anim>Discover How Our Advisory Can Transform Your Next Deal</h2>
+      <p data-anim>Whether you're acquiring, selling, or transitioning a business, our team is here to ensure you move forward with confidence and clarity.</p>
+      <div class="p1-cta__btns" data-anim>
         <a href="/contact/" class="p1-btn p1-btn--primary">Free Consultation</a>
         <a href="/contact/" class="p1-btn p1-btn--outline">Contact Us</a>
       </div>
@@ -198,24 +231,94 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   </section>
 </BaseLayout>
 
+<!-- Force header dark + white logo on Page 1 regardless of OS theme -->
+<style is:global>
+  .header {
+    background-color: #1a1613 !important;
+    border-bottom-color: rgba(255,255,255,0.08) !important;
+  }
+  /* Hide both default logo imgs and show our own */
+  .header .logo--dark,
+  .header .logo--light {
+    display: none !important;
+  }
+  .header .header__logo::before {
+    content: "";
+    display: block;
+    width: 160px;
+    height: 40px;
+    background: url("/images/GENERAL_INTEREST_TEST_01.svg") no-repeat center / contain;
+    filter: brightness(0) invert(1);
+  }
+  .header .header__nav a {
+    color: rgba(255,255,255,0.65) !important;
+  }
+  .header .header__nav a:hover,
+  .header .header__nav a.active {
+    color: #fff !important;
+  }
+  .header .header__menu-btn svg {
+    stroke: #fff !important;
+  }
+  /* Footer logo - also white */
+  .footer .logo--dark,
+  .footer .logo--light {
+    display: none !important;
+  }
+  .footer .footer__logo::before {
+    content: "";
+    display: block;
+    width: 160px;
+    height: 40px;
+    background: url("/images/GENERAL_INTEREST_TEST_01.svg") no-repeat center / contain;
+    filter: brightness(0) invert(1);
+  }
+</style>
+
+<!-- Scroll-in animation script -->
+<script>
+  // Assign sequential stagger delays within each section
+  document.querySelectorAll('.p1-hero, .p1-section, .p1-marquee, .p1-cta').forEach((section) => {
+    const els = section.querySelectorAll('[data-anim]');
+    els.forEach((el, i) => {
+      (el as HTMLElement).style.transitionDelay = `${i * 120}ms`;
+    });
+  });
+
+  const animEls = document.querySelectorAll('[data-anim]');
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('anim--visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+  animEls.forEach((el) => observer.observe(el));
+</script>
+
 <style>
   /* ================================
      PAGE 1 – Consultek-inspired
      Brown / Beige / Desaturated tones
      ================================ */
 
-  /* Palette */
+  /* Palette – Full dark mode */
   :root {
     --p1-brand: #b08f5a;
     --p1-brand-dark: #8a6f3e;
     --p1-bg-dark: #1a1613;
-    --p1-bg-section: #f5f0e8;
-    --p1-bg-card: #ede8df;
-    --p1-text: #3d3529;
-    --p1-text-muted: #7a6f60;
-    --p1-heading: #1a1613;
+    --p1-bg-section: #241f1b;
+    --p1-bg-light: #2e2722;
+    --p1-bg-card: #332c26;
+    --p1-text: rgba(255,255,255,0.85);
+    --p1-text-muted: rgba(255,255,255,0.55);
+    --p1-heading: #fff;
     --p1-white: #fff;
-    --p1-border: #d5cfc3;
+    --p1-border: rgba(255,255,255,0.1);
   }
 
   /* Utilities */
@@ -231,6 +334,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
   .p1-section {
     padding: 100px 0;
+    background-color: var(--p1-bg-light);
+    color: var(--p1-text);
   }
 
   .p1-section--alt {
@@ -273,8 +378,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
   .p1-btn--outline {
     background: transparent;
-    color: var(--p1-heading);
-    border-color: var(--p1-border);
+    color: var(--p1-white);
+    border-color: rgba(255,255,255,0.25);
   }
   .p1-btn--outline:hover {
     border-color: var(--p1-brand);
@@ -293,8 +398,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   .p1-hero__bg {
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse at 30% 20%, rgba(176,143,90,0.15) 0%, transparent 60%),
-                radial-gradient(ellipse at 80% 80%, rgba(176,143,90,0.08) 0%, transparent 50%);
     pointer-events: none;
   }
 
@@ -383,7 +486,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   .p1-quote p {
     font-style: italic;
     font-size: 16px;
-    color: var(--p1-text);
+    color: rgba(255,255,255,0.8);
     margin-bottom: 8px;
   }
 
@@ -448,7 +551,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
   /* ---------- Marquee ---------- */
   .p1-marquee {
-    background-color: var(--p1-bg-dark);
+    background-color: #130f0d;
     padding: 20px 0;
     overflow: hidden;
     white-space: nowrap;
@@ -482,12 +585,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     border-radius: 8px;
     overflow: hidden;
     border: 1px solid var(--p1-border);
-    background: var(--p1-white);
+    background: var(--p1-bg-card);
     transition: box-shadow 0.3s;
   }
 
   .p1-service-card:hover {
-    box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.25);
   }
 
   .p1-service-card img {
@@ -524,7 +627,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   .p1-process__card {
     border-radius: 8px;
     overflow: hidden;
-    background: var(--p1-white);
+    background: var(--p1-bg-card);
     border: 1px solid var(--p1-border);
     text-decoration: none;
     color: inherit;
@@ -534,7 +637,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   }
 
   .p1-process__card:hover {
-    box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.25);
     color: inherit;
   }
 
@@ -661,12 +764,132 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     color: var(--p1-brand);
   }
 
+  /* ---------- Team ---------- */
+  .p1-team__header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .p1-team__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  .p1-section--dark {
+    background-color: var(--p1-bg-dark);
+    color: rgba(255,255,255,0.8);
+  }
+
+  .p1-section--dark .p1-section__title {
+    color: var(--p1-white);
+  }
+
+  .p1-section--dark .p1-tag {
+    color: var(--p1-brand);
+  }
+
+  .p1-team-card {
+    text-align: center;
+    padding: 40px 24px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+  }
+
+  .p1-team-card__image {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 24px;
+    border: 3px solid var(--p1-brand);
+  }
+
+  .p1-team-card__name {
+    font-size: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+    color: var(--p1-white);
+  }
+
+  .p1-team-card__role {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--p1-brand);
+    margin-bottom: 16px;
+  }
+
+  .p1-team-card__bio {
+    font-size: 14px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.7;
+  }
+
+  /* ---------- Scroll-in Animation ---------- */
+  [data-anim] {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 1.2s cubic-bezier(0.22, 0.61, 0.36, 1), transform 1.2s cubic-bezier(0.22, 0.61, 0.36, 1);
+    transition-delay: 0ms; /* overridden by JS per-element */
+  }
+
+  [data-anim].anim--visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ---------- Gradual Blur ---------- */
+  .gradual-blur-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .gradual-blur-inner > div {
+    -webkit-backdrop-filter: inherit;
+    backdrop-filter: inherit;
+  }
+
+  .gradual-blur {
+    isolation: isolate;
+  }
+
+  @supports not (backdrop-filter: blur(1px)) {
+    .gradual-blur-inner > div {
+      background: rgba(0, 0, 0, 0.3);
+      opacity: 0.5;
+    }
+  }
+
+  .gradual-blur-fixed {
+    position: fixed !important;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 150px;
+    pointer-events: none;
+    z-index: 9;
+  }
+
+  /* ---------- Dark-section heading color overrides ---------- */
+  .p1-hero .p1-section__title,
+  .p1-cta .p1-section__title {
+    color: var(--p1-white);
+  }
+
   /* ---------- Responsive ---------- */
   @media (max-width: 1024px) {
     .p1-hero__title { font-size: 48px; }
     .p1-section__title { font-size: 34px; }
     .p1-services__grid { grid-template-columns: 1fr 1fr; }
     .p1-process__grid { grid-template-columns: 1fr; }
+    .p1-team__grid { grid-template-columns: 1fr 1fr; }
   }
 
   @media (max-width: 768px) {
@@ -680,11 +903,21 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     .p1-about__grid { grid-template-columns: 1fr; gap: 40px; }
     .p1-services__grid { grid-template-columns: 1fr; }
     .p1-about__cols { grid-template-columns: 1fr; }
+    .p1-team__grid { grid-template-columns: 1fr; }
   }
 
   @media (max-width: 480px) {
     .p1-hero__title { font-size: 30px; letter-spacing: -1px; }
     .p1-section__title { font-size: 26px; }
     .p1-cta__btns { flex-direction: column; align-items: center; }
+  }
+
+  /* Desaturate photos 30% + warm brown tint */
+  :global(.p1-intro__image img),
+  :global(.p1-ops__image img),
+  :global(.p1-service-card img),
+  :global(.p1-process__card img),
+  :global(.p1-about__img) {
+    filter: saturate(0.7) sepia(0.2) hue-rotate(5deg) brightness(0.95);
   }
 </style>
