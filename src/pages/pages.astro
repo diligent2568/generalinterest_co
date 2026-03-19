@@ -1,16 +1,85 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Hero from "../components/Hero.astro";
-import Mission from "../components/Mission.astro";
-import Values from "../components/Values.astro";
-import Team from "../components/Team.astro";
-import CTA from "../components/CTA.astro";
+
+const pages = [
+  {
+    title: "Page 1",
+    url: "/page-1/",
+    thumb: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=160&h=160&fit=crop&q=80",
+  },
+  { title: "Page 2", url: "#", thumb: "" },
+  { title: "Page 3", url: "#", thumb: "" },
+  { title: "Page 4", url: "#", thumb: "" },
+  { title: "Page 5", url: "#", thumb: "" },
+];
 ---
 
 <BaseLayout>
-  <Hero />
-  <Mission />
-  <Values />
-  <Team />
-  <CTA />
+  <section class="section">
+    <div class="container">
+      <ul class="pages-list">
+        {pages.map((page) => (
+          <li class="pages-list__item">
+            <a href={page.url} class="pages-list__link">
+              {page.thumb ? (
+                <img class="pages-list__thumb" src={page.thumb} alt={page.title} loading="lazy" />
+              ) : (
+                <div class="pages-list__thumb pages-list__thumb--empty"></div>
+              )}
+              <h5 class="pages-list__title">{page.title}</h5>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
 </BaseLayout>
+
+<style>
+  .pages-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .pages-list__item {
+    display: flex;
+    align-items: center;
+  }
+
+  .pages-list__link {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.25s;
+  }
+
+  .pages-list__link:hover {
+    opacity: 0.75;
+  }
+
+  .pages-list__thumb {
+    width: 80px;
+    height: 80px;
+    border-radius: 6px;
+    flex-shrink: 0;
+    object-fit: cover;
+  }
+
+  .pages-list__thumb--empty {
+    background-color: var(--color-page-alt-bg);
+    border: 1px solid var(--color-page-border);
+  }
+
+  .pages-list__title {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+    color: var(--color-page-heading);
+  }
+</style>

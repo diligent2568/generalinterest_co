@@ -7,8 +7,8 @@ export const siteData = {
   footerTagline: "Builders and doers. Proudly based in the USA. 🇺🇸",
 
   menu: [
-    { title: "Pages", url: "/pages/" },
     { title: "Home", url: "/" },
+    { title: "Pages", url: "/pages/" },
     { title: "Contact", url: "/contact/" },
   ],
 
