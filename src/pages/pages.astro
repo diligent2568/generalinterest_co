@@ -7,7 +7,12 @@ const pages = [
     url: "/page-1/",
     thumb: "/images/GENERAL_INTEREST_ICON.svg",
   },
-  { title: "Page 2", url: "#", thumb: "" },
+  {
+    title: "Page 2",
+    url: "/page-2/",
+    thumb: "/images/GENERAL_INTEREST_TEST_02.svg",
+    thumbBg: "#242424",
+  },
   { title: "Page 3", url: "#", thumb: "" },
   { title: "Page 4", url: "#", thumb: "" },
   { title: "Page 5", url: "#", thumb: "" },
@@ -22,7 +27,7 @@ const pages = [
           <li class="pages-list__item">
             <a href={page.url} class="pages-list__link">
               {page.thumb ? (
-                <img class="pages-list__thumb" src={page.thumb} alt={page.title} loading="lazy" />
+                <img class="pages-list__thumb" src={page.thumb} alt={page.title} loading="lazy" style={page.thumbBg ? `background:${page.thumbBg};` : undefined} />
               ) : (
                 <div class="pages-list__thumb pages-list__thumb--empty"></div>
               )}
